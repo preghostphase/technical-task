@@ -2,7 +2,7 @@
 
 Tasks I would undertake if more time were available:
 
-- Looking into storing the JavaScript Web Token, as keeping it in a variable is not very secure. I read something about storing it ‘In Memory’ over using LocalStorage or Cookies so would need to look more into that. 
+- Looking into storing the JSON Web Token, I’ve read up about storing it as a Cookie, in memory, or in LocalStorage so would need to do some further research.
 - Next I would look at how to fix the missing image within one of the December events - either display a default image if one doesn’t exist, or look at using one of the mobile images returned by the API.
 - I would also look at swapping images depending on screen size as listed within the API, so when at mobile use the mobile image etc.
 - I would also convert the project to using sass instead of css.

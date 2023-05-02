@@ -1,0 +1,267 @@
+/* Importing fonts */
+
+@font-face {
+	font-family: rawline-300;
+	src: url('../../src/fonts/rawline-300.woff');
+}
+@font-face {
+	font-family: rawline-500;
+	src: url('../../src/fonts/rawline-500.woff');
+}
+@font-face {
+	font-family: rawline-700;
+	src: url('../../src/fonts/rawline-700.woff');
+}
+
+/* Declaring variables */
+
+:root {
+	--body: #3d3d3c;
+	--green: #8faf5b;
+  }
+
+body {
+	padding: 0;
+	margin: 0;
+	width: 100%;
+	height: auto;
+}
+
+/* Global HTML elements */
+
+h1, h2, h3, h4, h5, p, span {
+	color: #fff;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.events {
+	width: 100%;
+	height: auto;
+	position: relative;
+	background-color: #fff;
+	padding: 1.5rem 1.5rem 4rem 1.5rem;
+	margin: 0 auto;
+}
+
+.events-wrapper {
+	width: 100%;
+	height: auto;
+	margin: 0 auto;
+}
+
+/* Before api results load */
+.events-searching {
+	color: #000;
+	margin-top: 0;
+	display: block;
+	font-family: 'rawline-700';
+	position: relative;
+}
+
+/* Titles */
+.events-title {
+	color: #000;
+	margin-top: 0;
+	display: block;
+	font-family: 'rawline-700';
+	position: relative;
+	padding-bottom: 1rem;
+	margin-bottom: 1rem;
+	border-bottom: 1px solid var(--green);
+}
+
+.events-subtitle {
+	color: #000;
+	margin-top: 0;
+	display: block;
+	font-family: 'rawline-500';
+	position: relative;
+	font-size: 22px;
+	margin-bottom: 1.5rem;
+}
+
+/* Events Grid */
+.events-grid {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-gap: 1.5rem;
+	width: 100%;
+	margin: 0;
+}
+
+.events-item {
+	width: 100%;
+	position: relative;
+	background-color: #fff;
+	-webkit-box-shadow: 0px 0px 15px -10px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 0px 15px -10px rgba(0,0,0,0.75);
+	box-shadow: 0px 0px 15px -10px rgba(0,0,0,0.75);
+	transition: all 0.3s ease;
+}
+
+.events-item:hover,
+.events-item:focus {
+	transform: translateY(-5px);
+}
+
+.events-image {
+	width: 100%;
+	height: 250px;
+	display: block;
+	border-bottom: 5px solid var(--green);
+}
+
+.events-image img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: center;
+}
+
+.events-info {
+	padding: 1.5rem;
+}
+
+.events-info h3 {
+	font-family: 'rawline-500';
+	color: var(--body);
+	margin: 0 0 0.25rem 0;
+	font-size: 20px;
+}
+
+.events-info p {
+	font-family: 'rawline-500';
+	color: var(--green);
+	margin-bottom: 0;
+}
+
+/* Filters */
+
+.events-dropdown {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	background-color: var(--green);
+	color: #fff;
+	font-size: 22px;
+	outline: none;
+	border: none;
+	transition: all 0.3s ease;
+	padding: 0.6rem 3.5rem;
+}
+
+.events-filter {
+	width: 100%;
+	height: auto;
+	position: relative;
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-gap: 0.5rem;
+	margin-bottom: 1.5rem;
+	display: none;
+}
+
+.events-filter.active {
+	display: grid;
+}
+
+.events-dropdown:hover,
+.events-dropdown:focus {
+	background-color: #617c36;
+	color: #fff;
+}
+
+.events-month {
+	background-color: #f4f4f4;
+	color: var(--body);
+	font-family: 'rawline-500';
+	border: none;
+	outline: none;
+	padding: 0.6rem 3.5rem;
+	transition: all 0.3s ease;
+	cursor: pointer;
+	position: relative;
+	font-size: 18px;
+}
+
+/* Add data attribute to pseudo element showing number of articles for each month */
+.events-month::after {
+	content: attr(data-numberOfEvents);
+	position: absolute;
+	right: 1.5rem;
+	top: 9px;
+	color: #fff;
+	width: 25px;
+	height: 25px;
+	font-size: 11px;
+	border-radius: 100%;
+	background-color: var(--green);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.events-month.empty{
+	opacity: 0.5;
+	cursor: not-allowed;
+}
+
+.events-month:hover{
+	background-color: var(--green);
+	color: #fff;
+}
+
+.events-month.active {
+	background-color: var(--green);
+	color: #fff;
+}
+
+.events-month.active::after {
+	background-color: #fff;
+	color: var(--green);
+}
+
+/* Media Queries */
+
+/* Tablet */
+@media(min-width: 768px){
+	.events {
+		padding: 1.5rem 1.5rem 4rem 1.5rem;
+	}
+	.events-grid {
+		grid-template-columns: 1fr 1fr;
+	}
+	.events-filter {
+		grid-template-columns: 1fr 1fr;
+	}
+}
+
+/* Desktop */
+@media(min-width: 992px){
+	.events {
+		max-width: 992px;
+		padding: 3rem 3rem 6rem 3rem;
+	}
+	.events-grid {
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-gap: 2rem;
+	}
+	.events-filter {
+		grid-template-columns: 1fr 1fr 1fr;
+		display: grid;
+	}
+	.events-dropdown {
+		display: none;
+	}
+}
+
+/* Large Desktop */
+@media(min-width: 1200px){
+	.events {
+		max-width: 1200px;
+	}
+	.events-filter {
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+	}
+}

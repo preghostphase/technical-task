@@ -106,7 +106,7 @@ h1, h2, h3, h4, h5, p, span {
 
 .events-image {
 	width: 100%;
-	height: 250px;
+	height: 200px;
 	display: block;
 	border-bottom: 5px solid var(--green);
 }
@@ -115,7 +115,7 @@ h1, h2, h3, h4, h5, p, span {
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
-	object-position: center;
+	object-position: left;
 }
 
 .events-info {
@@ -190,7 +190,7 @@ h1, h2, h3, h4, h5, p, span {
 	content: attr(data-numberOfEvents);
 	position: absolute;
 	right: 1.5rem;
-	top: 9px;
+	top: 11px;
 	color: #fff;
 	width: 25px;
 	height: 25px;
@@ -210,6 +210,11 @@ h1, h2, h3, h4, h5, p, span {
 .events-month:hover{
 	background-color: var(--green);
 	color: #fff;
+}
+
+.events-month:hover::after {
+	background-color: #fff;
+	color: var(--green);
 }
 
 .events-month.active {
